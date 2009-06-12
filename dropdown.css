@@ -1,0 +1,365 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:focus{ outline: none; }
+
+h2 { clear: both; }
+
+body {
+	font: 12px Helvetica;
+	line-height: 14px;
+	text-align: left;
+	background-color: #000555;
+}
+
+li { list-style-type: none; }
+
+
+
+
+
+/* example 4 SubMenu */
+
+#SubMenu {
+	height: 40px;
+	position: relative;
+	background-color: white;
+}
+
+#SubMenu li {
+	float: left;
+	z-index: 10;
+	display: block;
+	overflow-x: visible;
+}
+
+#SubMenu li.hover { z-index: 12; }
+
+#SubMenu li ul {
+	top: 20px;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	overflow-y: hidden;
+}
+
+
+#SubMenu li ul li {
+	float: left;
+	width: auto;
+	display: block;
+	position: relative;
+	white-space: nowrap;
+	background-color: white;
+}
+
+#SubMenu a {
+	display: block;
+	padding: 0 12px;
+	line-height: 20px;
+}
+
+#SubMenu li ul li { line-height: 18px; }
+
+#SubMenu li.hover,
+#SubMenu li.active,
+#SubMenu li a:hover,
+#SubMenu li ul li a { background-color: white; }
+
+#SubMenu li,
+#SubMenu li ul li a:hover {
+	color: white;
+	background-color: #aaa;
+}
+
+#SubMenu li ul li a:focus {
+	-moz-outline-style: none;
+}
+
+/* noscript - css only */
+#SubMenu.noscript > li:hover {
+	background-color: white;
+}
+
+#SubMenu.noscript li:hover ul {
+	height: auto;
+}
+
+
+
+
+
+
+/* example 1 SlideDown */
+
+#SlideDown { height: 20px; }
+
+#SlideDown li {
+	float: left;
+	display: block;
+	overflow-x: visible;
+}
+
+#SlideDown li ul {
+	height: 0;
+	z-index: 10;
+	position: absolute;
+	overflow-y: hidden;
+}
+
+#SlideDown li.hover ul { z-index: 12; }
+
+#SlideDown li ul li {
+	float: none;
+	clear: both;
+	width: auto;
+	display: block;
+	position: relative;
+	white-space: nowrap;
+	background-color: white;
+}
+
+#SlideDown a {
+	display: block;
+	padding: 0 12px;
+	line-height: 20px;
+}
+
+#SlideDown li ul li { line-height: 18px; }
+
+#SlideDown li.hover,
+#SlideDown li a:hover,
+#SlideDown li ul li a { background-color: white; }
+
+#SlideDown li,
+#SlideDown li ul li a:hover {
+	color: white;
+	background-color: #aaa;
+}
+
+#SlideDown li ul li a:focus {
+	-moz-outline-style: none;
+}
+
+/* noscript - css only */
+#SlideDown.noscript > li:hover {
+	background-color: white;
+}
+
+#SlideDown.noscript li:hover ul {
+	height: auto;
+}
+
+
+
+
+
+
+/* example 1.2 BlendIn */
+
+#BlendIn { height: 20px; }
+
+#BlendIn li {
+	float: left;
+	display: block;
+	overflow-x: visible;
+}
+
+#BlendIn li ul {
+	display: block;
+	z-index: 10;
+	position: absolute;
+	overflow-y: hidden;
+}
+
+#BlendIn li.hover ul { z-index: 12; }
+
+#BlendIn li ul li {
+	float: none;
+	clear: both;
+	width: auto;
+	display: block;
+	position: relative;
+	white-space: nowrap;
+	background-color: white;
+}
+
+#BlendIn a {
+	display: block;
+	padding: 0 12px;
+	line-height: 20px;
+}
+
+#BlendIn li ul li { line-height: 18px; }
+
+#BlendIn li.hover,
+#BlendIn li a:hover,
+#BlendIn li ul li a { background-color: white; }
+
+#BlendIn li,
+#BlendIn li ul li a:hover {
+	color: white;
+	background-color: #aaa;
+}
+
+#BlendIn li ul li a:focus {
+	-moz-outline-style: none;
+}
+
+/* noscript - css only */
+#BlendIn.noscript > li:hover {
+	background-color: white;
+}
+
+#BlendIn.noscript li:hover ul {
+	height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* example 2 DropDown */
+
+#DropDown li {
+	float: left;
+	display: block;
+	overflow-x: visible;
+}
+
+#DropDown li ul {
+	z-index: 10;
+	position: absolute;
+}
+
+#DropDown li.hover ul { z-index: 12; }
+
+#DropDown li ul li {
+	top: 0;
+	left: 0;
+	float: none;
+	width: auto;
+	position: relative;
+	white-space: nowrap;
+}
+
+#DropDown li a {
+	width: auto;
+	padding: 0 6px;
+	display: block;
+	line-height: 20px;
+}
+
+#DropDown li ul li a { line-height: 18px; }
+
+#DropDown li ul li a:focus {
+	-moz-outline-style: none;
+}
+
+#DropDown li ul li.sub ul {
+	top: 0;
+	left: 0;
+	float: left;
+	width: auto;
+	height: auto;
+	position: absolute;
+	margin-left: 100%;
+}
+
+#DropDown li.hover,
+#DropDown li a:hover,
+#DropDown li.hover a,
+#DropDown li.hover ul li a:hover {
+	color: white;
+	background-color: blue;
+}
+
+#DropDown li,
+#DropDown li.hover ul li a {
+	color: black;
+	background-color: white;
+}
+
+#DropDown.noscript li ul,
+#DropDown.noscript li ul li.sub ul { display: none; }
+
+#DropDown.noscript li:hover ul,
+#DropDown.noscript li ul li.sub:hover ul { display: block; }
+
+
+
+
+
+/* example 3 SlideRight */
+
+#SlideRight li {
+	width: 100px;
+	display: block;
+	position: relative;
+	line-height: 1.5;
+}
+
+#SlideRight li ul {
+	top: 0;
+	left: 100px;
+	position: absolute;
+	overflow-x: hidden;
+}
+
+#SlideRight li { z-index: 10; }
+
+#SlideRight li.hover { z-index: 12; }
+
+#SlideRight li ul li {
+	width: auto;
+	position: relative;
+	white-space: nowrap;
+}
+
+#SlideRight li a {
+	width: 100px;
+	padding: 0 6px;
+	display: inline;
+}
+
+#SlideRight li ul li a {
+	width: auto;
+	display: block;
+ }
+
+#SlideRight li ul li a:focus {
+	-moz-outline-style: none;
+}
+
+#SlideRight li.hover,
+#SlideRight li:hover,
+#SlideRight li.hover a,
+#SlideRight li:hover a,
+#SlideRight li.hover ul li a:hover,
+#SlideRight.noscript li:hover ul li a:hover {
+	color: white;
+	background-color: blue;
+}
+
+#SlideRight li,
+#SlideRight li.hover ul li a,
+#SlideRight.noscript li:hover ul li a {
+	color: black;
+	background-color: white;
+}
+
+#SlideRight.noscript li ul { display: none; }
+#SlideRight.noscript li:hover ul { display: block; }
+

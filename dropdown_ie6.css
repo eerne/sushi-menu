@@ -1,0 +1,2 @@
+/* some ie6 quirk, fixes weirdo margin after a item containing a submenu  */
+#DropDown li ul li.sub { margin-bottom: -1.27em; }

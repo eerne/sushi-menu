@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>MooTools Dropdown</title>
+	<link rel="stylesheet" href="dropdown.css" type="text/css" />
+	<script type="text/javascript" src="mootools-1.2.2-core-nc.js"></script>
+	<script type="text/javascript" src="Array.Extras-1.2.2.2-yc.js"></script>
+	<script type="text/javascript" src="dropdown.js"></script>
+	<!--[if lt IE 8]>
+		<link rel="stylesheet" href="dropdown_ie7.css" type="text/css" />
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<link rel="stylesheet" href="dropdown_ie6.css" type="text/css" />
+	<![endif]-->
+	<script type="text/javascript">
+		window.addEvent('load', function(){
+
+
+
+
+			// example 1 scroll
+			new DropDown($('SlideDown').removeClass('noscript'));
+			
+			// example 1.2 opacity similar CSS with example 1
+			new DropDown($('BlendIn').removeClass('noscript'), {
+				animate: 'opacity',
+				property: 'getOpacity',
+				modify: 'max'
+			});
+			
+			// example 1.3 scroll opacity similar CSS with example 1
+			new DropDown($('SubMenu').removeClass('noscript'), {
+				animate: 'opacity',
+				property: 'getOpacity',
+				modify: 'max',
+				fixIE: false,
+				over: {duration: 300},
+				out: {duration: 300}
+			});
+
+			// example 2 opacity
+			// initiate subsubmenu
+			$('DropDown').getElements('li.sub').each(function(el){
+				// this part is throwing an error in IE :(
+				new DropDown(el, {
+					item: el,
+					animate: 'opacity',
+					property: 'getOpacity',
+					modify: 'max',
+					fixIE: false
+				});
+			});
+			// initiate mainmenu
+			new DropDown($('DropDown').removeClass('noscript'), {
+				animate: 'opacity',
+				property: 'getOpacity',
+				modify: 'max'
+			});
+
+			// example 3 vertical menu
+			new DropDown($('SlideRight').removeClass('noscript'), {
+				animate: 'width',
+				property: 'getWidth',
+				modify: 'max'
+			});
+
+		});
+	</script>
+</head>
+<body>
+
+<ul id="cats">
+<li>a</li>
+<li class="miau">b</li>
+<li class="miau">c</li>
+</ul>
+
+	<h1>MooTools Dropdown</h1>
+	<p>
+		This example explains how to open a menu-like element on mouseenter and
+		how it closes again on mouseleave.
+	</p>
+
+
+
+	
+<h2>Example 1</h2>
+	<ul id="SlideDown" class="noscript">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Service</a><ul><li><a href="#">SUB - B - 1 - with a lot of text rrrr</a></li><li><a href="#">SUB - B - 2</a></li><li><a href="#">SUB - B - 3 - with a lot of text</a></li></ul></li>
+		<li><a href="#">Products</a><ul><li><a href="#">SUB - C - 1</a></li><li><a href="#">SUB - C - 2</a></li><li><a href="#">SUB - 3 3 3 3 3 33  3 3</a></li><li><a href="#">SUB - C - 4</a></li><li><a href="#">SUB - C - 5</a></li><li><a href="#">SUB - C - 6 44</a></li></ul></li>
+		<li><a href="#">Support</a><ul><li><a href="#a1">SUB - D - 1 - with a lot text</a></li><li><a href="#a2">SUB - D - 2 - with a lot of test</a></li><li><a href="#a3">SUB - D - 3 - with a lot f test text</a></li><li><a href="#a4">SUB - D - 4 - with at text text</a></li><li><a href="#a5">SUB - D - 5 - with a lot of test text text text</a></li></ul></li>
+		<li><a href="#">About us</a></li>
+	</ul>
+	
+	
+	
+<h2>Example 1.2</h2>
+	<ul id="BlendIn" class="noscript">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Service</a><ul><li><a href="#">SUB - B - 1 - with a lot of text rrrr</a></li><li><a href="#">SUB - B - 2</a></li><li><a href="#">SUB - B - 3 - with a lot of text</a></li></ul></li>
+		<li><a href="#">Products</a><ul><li><a href="#">SUB - C - 1</a></li><li><a href="#">SUB - C - 2</a></li><li><a href="#">SUB - 3 3 3 3 3 33  3 3</a></li><li><a href="#">SUB - C - 4</a></li><li><a href="#">SUB - C - 5</a></li><li><a href="#">SUB - C - 6 44</a></li></ul></li>
+		<li><a href="#">Support</a><ul><li><a href="#a1">SUB - D - 1 - with a lot text</a></li><li><a href="#a2">SUB - D - 2 - with a lot of test</a></li><li><a href="#a3">SUB - D - 3 - with a lot f test text</a></li><li><a href="#a4">SUB - D - 4 - with at text text</a></li><li><a href="#a5">SUB - D - 5 - with a lot of test text text text</a></li></ul></li>
+		<li><a href="#">About us</a></li>
+	</ul>
+	
+	
+<h2>Example 1.3</h2>
+	<ul id="SubMenu" class="noscript">
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">Service</a><ul><li><a href="#">Car wash</a></li><li><a href="#">Dog walk</a></li><li><a href="#">Dish wash</a></li></ul></li>
+		<li><a href="#">Products</a><ul><li><a href="#">Jeans</a></li><li><a href="#">Cars</a></li><li><a href="#">Beer</a></li><li><a href="#">Movies</a></li><li><a href="#">Games</a></li><li><a href="#">SUB - C - 6 44</a></li></ul></li>
+		<li><a href="#">Support</a><ul><li><a href="#a1">Formular</a></li><li><a href="#a2">Location</a></li><li><a href="#a3">FAQ</a></li></ul></li>
+		<li><a href="#">About us</a></li>
+	</ul>
+
+	
+	
+	<br />
+<br />
+	<br />
+
+<h2>Example 2</h2>
+	<ul id="DropDown" class="opacity noscript">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Service</a><ul><li><a href="#">SUB - B - 1 </a></li><li class="sub"><a href="#">submenu ---&gt;</a><ul><li><a href="#">SUB - E</a></li><li><a href="#">SUB - E - 2 4</a></li><li><a href="#">SUB - E -</a></li><li><a href="#">SUB - E - 43</a></li></ul></li><li class="sub"><a href="#">submenu ---&gt;</a><ul><li><a href="#">SUB - E</a></li><li><a href="#">SUB - E - 2 4</a></li><li><a href="#">SUB - E -</a></li><li><a href="#">SUB - E - 43</a></li><li><a href="#">SUB - E - 5</a></li><li><a href="#">SUB - E - 6</a></li></ul></li></ul></li>
+		<li><a href="#">Products</a><ul><li><a href="#">SUB - C - 1</a></li><li class="sub"><a href="#">submenu ---&gt;</a><ul><li><a href="#oneitem">one item</a></li></ul></li><li><a href="#">SUB - 3 3 3 3 3 33  3 3</a></li><li class="sub"><a href="#">submenu ---&gt;</a><ul><li><a href="#">SUB - E - asdf sad f dsf last</a></li><li><a href="#">SUB - E - 2 4</a></li><li><a href="#">SUB - E -</a></li><li><a href="#">SUB - E - 43</a></li><li><a href="#">SUB - E - 5</a></li><li><a href="#">SUB - E - 6</a></li></ul></li><li><a href="#">SUB - C - 5</a></li><li><a href="#">SUB - C - 6 44</a></li></ul></li>
+		<li><a href="#">Support</a><ul><li><a href="#a1">SUB - D - 1 - with a lot text</a></li><li><a href="#a2">SUB - D - 2 - with a lot of test</a></li><li><a href="#a3">SUB - D - 3 - with a lot f test text</a></li><li><a href="#a4">SUB - D - 4 - with at text text</a></li><li><a href="#a5">SUB - D - 5 - with a lot of test text text text</a></li></ul></li>
+		<li><a href="#">About us</a></li>
+	</ul>
+	<br />
+<br />
+	<br />
+
+<h2>Example 3</h2>
+	<ul id="SlideRight" class="noscript">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Service</a><ul><li><a href="#">SUB - B - 1 </a></li><li><a href="#">SUB - B - 2</a></li><li><a href="#">SUB - B - 3 </a></li></ul></li>
+		<li><a href="#">Products</a><ul><li><a href="#">SUB - C - 1</a></li><li><a href="#">one item</a></li><li><a href="#">SUB - 3 3 3 3 3 33  3 3</a></li><li><a href="#">submenu</a></li><li><a href="#">SUB - C - 5</a></li><li><a href="#">SUB - C - 6 44</a></li></ul></li>
+		<li><a href="#">Support</a><ul><li><a href="#a1">SUB - D - 1 - with a lot text</a></li><li><a href="#a2">SUB - D - 2 - with a lot of test</a></li><li><a href="#a3">SUB - D - 3 - with a lot f test text</a></li><li><a href="#a4">SUB - D - 4 - with at text text</a></li><li><a href="#a5">SUB - D - 5 - with a lot of test text text text</a></li></ul></li>
+		<li><a href="#">About us</a></li>
+	</ul>
+	<br />
+<br />
+	<br />
+
+<br />
+<br />
+
+
+<br />
+<br />
+	
+
+
+	
+
+	
+</body>
+</html>

@@ -1,0 +1,16 @@
+#SlideDown.noscript li ul li a,
+#DropDown.noscript li ul li a,
+#SlideRight.noscript li ul li a {
+	width: 200px;
+	display: block;
+	overflow-x: hidden;
+}
+
+#DropDown.noscript li ul li {
+	min-height: 18px;
+	white-space: normal;
+}
+
+#DropDown.noscript li ul li.sub:hover {
+	margin-bottom: -3px;
+}
